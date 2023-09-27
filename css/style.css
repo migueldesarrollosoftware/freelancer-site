@@ -1,0 +1,156 @@
+/*
+medidas:
+    px -> pixel
+        - 1px = 1/96 de 1 pulgada
+        - medida absoluta
+        - facil de usar
+        - no se adapta a los diferentes tamaños de pantalla
+    em -> em
+        - 1em = 16px
+        - medida relativa
+        - se adapta a los diferentes tamaños de pantalla
+        - no es facil de usar
+    rem -> root em
+        - 1rem = 16px
+        - medida relativa al root
+        - se adapta a los diferentes tamaños de pantalla
+        - facil de usar
+        - recomendado para responsive design
+        - se puede manejar facil con un hack para que 1rem = 10px
+
+        HACK:
+            html {
+                font-size: 62.5%;
+            }
+
+            ENTONCES:
+            body {
+                font-size: 1.6rem; // 16px
+            }
+            h1 {
+                font-size: 2.4rem; // 24px
+            }
+            h2 {
+                font-size: 2rem; // 20px
+            }
+
+
+            otros agregan mas cosas como:
+                html {
+                        font-size: 62.5%;
+                        box-sizing: border-box;
+                    }
+                    
+                    body {  
+                        font-size: 16px;
+                    }
+                    
+                    
+                    *,
+                    *:before,
+                    *:after {
+                        box-sizing: inherit;
+                    }
+
+    % -> porcentaje
+        - 1% = 1/100
+    vw -> viewport width
+        - 1vw = 1% del ancho de la pantalla
+    vh -> viewport height
+        - 1vh = 1% del alto de la pantalla
+    vmin -> viewport minimum
+        - 1vmin = 1% del menor de los lados de la pantalla
+    vmax - > viewport maximum
+        - 1vmax = 1% del mayor de los lados de la pantalla
+
+*/
+
+/* atributos globales */
+:root {
+    --white: #FFFFFF;
+    --black: #212121;
+    --primary: #FFC107;
+    --secondary: #0097A7;
+    --gray: #757575;
+    --gray-light: #DFE9F3;
+}
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+body {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+  }
+  
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+
+.title {
+    font-size: 3.8rem;
+    text-align: center;
+}
+
+.title > span {
+    font-size: 2rem;
+}
+
+
+/* navigation */
+.nav-bg {
+    background-color: var(--secondary);
+}
+
+.navigation-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-main a {
+    display: block;
+    text-align: center;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.navigation-main a:hover {
+    background-color: var(--primary);
+    color: var(--black)
+}
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.content-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-hero h2,
+.content-hero p {
+    color: var(--white);
+}
