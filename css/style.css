@@ -119,6 +119,8 @@ main {
     justify-content: space-evenly;
 }
 
+
+
 .navigation-main a {
     display: block;
     text-align: center;
@@ -292,7 +294,7 @@ form {
   
   }
   
-  .button {
+  /* .button {
       
      background-color: var(--secondary);
      color: var(--white);
@@ -305,11 +307,34 @@ form {
      border-radius: .5rem;
       
 
-  }
+  } */
   
   
   .align-right {
-  
     justify-content: flex-end;
-  
   }
+
+
+  @media (max-width: 768px) {
+    .navigation-main {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .button {
+        width: 50%;
+    }
+
+    .services {
+        grid-template-columns: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .services,
+    .navigation-main,
+    .form {
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
+}
